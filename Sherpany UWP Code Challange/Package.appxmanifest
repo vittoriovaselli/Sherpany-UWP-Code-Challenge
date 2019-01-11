@@ -30,7 +30,7 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="Sherpany_UWP_Code_Challange.App">
+      EntryPoint="Sherpany_UWP_Code_Challenge.App">
       <uap:VisualElements
         DisplayName="Sherpany UWP Code Challange"
         Square150x150Logo="Assets\Square150x150Logo.png"

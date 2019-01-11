@@ -1,9 +1,9 @@
 ﻿<Application
-    x:Class="Sherpany_UWP_Code_Challange.App"
+    x:Class="Sherpany_UWP_Code_Challenge.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Sherpany_UWP_Code_Challange"
-    xmlns:viewModel="using:Sherpany_UWP_Code_Challange.ViewModel">
+    xmlns:local="using:Sherpany_UWP_Code_Challenge"
+    xmlns:viewModel="using:Sherpany_UWP_Code_Challenge.ViewModel">
     <Application.Resources>
         <viewModel:ViewModelLocator x:Key="Locator" />
     </Application.Resources>

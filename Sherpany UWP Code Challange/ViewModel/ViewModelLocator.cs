@@ -9,12 +9,12 @@ using LightInject;
 using CommonServiceLocator;
 using LightInject.ServiceLocation;
 using MetroLog;
-using Sherpany_UWP_Code_Challange.Interfaces;
-using Sherpany_UWP_Code_Challange.Services;
-using Sherpany_UWP_Code_Challange.View.Dialog;
-using Sherpany_UWP_Code_Challange.ViewModel.Pages;
+using Sherpany_UWP_Code_Challenge.Interfaces;
+using Sherpany_UWP_Code_Challenge.Services;
+using Sherpany_UWP_Code_Challenge.View.Dialog;
+using Sherpany_UWP_Code_Challenge.ViewModel.Pages;
 
-namespace Sherpany_UWP_Code_Challange.ViewModel
+namespace Sherpany_UWP_Code_Challenge.ViewModel
 {
     public class ViewModelLocator
     {

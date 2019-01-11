@@ -8,7 +8,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
 
-namespace Sherpany_UWP_Code_Challange.ViewModel.Pages
+namespace Sherpany_UWP_Code_Challenge.ViewModel.Pages
 {
     public class MainPageViewModel: ViewModelBase
     {

@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Sherpany_UWP_Code_Challange.Model;
+using Sherpany_UWP_Code_Challenge.Model;
 
-namespace Sherpany_UWP_Code_Challange.View.Dialog
+namespace Sherpany_UWP_Code_Challenge.View.Dialog
 {
     public sealed partial class ConfirmActionDialog
     {

@@ -14,11 +14,11 @@ using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 using GalaSoft.MvvmLight.Threading;
 using Microsoft.Toolkit.Uwp.UI.Animations;
-using Sherpany_UWP_Code_Challange.Interfaces;
-using Sherpany_UWP_Code_Challange.Messages;
+using Sherpany_UWP_Code_Challenge.Interfaces;
+using Sherpany_UWP_Code_Challenge.Messages;
 using WinRTXamlToolkit.Controls.Extensions;
 
-namespace Sherpany_UWP_Code_Challange.View.Controls
+namespace Sherpany_UWP_Code_Challenge.View.Controls
 {
     /// <summary>
     ///     extends the Callisto CustomDialog with the behavior to align to Top, when the softkeyboard opens and reverses this

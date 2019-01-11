@@ -5,9 +5,9 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using CommonServiceLocator;
-using Sherpany_UWP_Code_Challange.Interfaces;
+using Sherpany_UWP_Code_Challenge.Interfaces;
 
-namespace Sherpany_UWP_Code_Challange.Services
+namespace Sherpany_UWP_Code_Challenge.Services
 {
     class DialogServiceEx : GalaSoft.MvvmLight.Views.DialogService, IDialogServiceEx
     {

@@ -15,10 +15,10 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using GalaSoft.MvvmLight.Messaging;
-using Sherpany_UWP_Code_Challange.Messages;
-using Sherpany_UWP_Code_Challange.ViewModel;
+using Sherpany_UWP_Code_Challenge.Messages;
+using Sherpany_UWP_Code_Challenge.ViewModel;
 
-namespace Sherpany_UWP_Code_Challange
+namespace Sherpany_UWP_Code_Challenge
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
