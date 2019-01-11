@@ -1,1 +1,1 @@
-# Sherpany-UWP-Code-Challange
+# Sherpany UWP Code Challenge
