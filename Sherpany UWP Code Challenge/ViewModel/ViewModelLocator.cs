@@ -9,6 +9,9 @@ using LightInject;
 using CommonServiceLocator;
 using LightInject.ServiceLocation;
 using MetroLog;
+using Sherpany_UWP_Code_Challange.Interfaces;
+using Sherpany_UWP_Code_Challange.Services;
+using Sherpany_UWP_Code_Challange.View.Pages;
 using Sherpany_UWP_Code_Challenge.Interfaces;
 using Sherpany_UWP_Code_Challenge.Services;
 using Sherpany_UWP_Code_Challenge.View.Dialog;
@@ -37,6 +40,7 @@ namespace Sherpany_UWP_Code_Challenge.ViewModel
 
         //the new pages
         public MainPageViewModel MainPage => ServiceLocator.Current.GetInstance<MainPageViewModel>();
+        public SherpanyValuesPageView ValuesPage => ServiceLocator.Current.GetInstance<SherpanyValuesPageView>();
 
 
         private void RegisterServices()
@@ -49,6 +53,14 @@ namespace Sherpany_UWP_Code_Challenge.ViewModel
 
             // Registration of the pages
             _container.Register<MainPageViewModel>();
+            _container.Register<SherpanyValuesPageView>();
+
+            
+
+            //Services
+            _container.Register<IDummyApiService, DummyApiService>();
+            _container.Register<IKeyManager, KeyManager>();
+            _container.Register<IEncryptionManager, UwpEncryptionManager>();
 
         }
 

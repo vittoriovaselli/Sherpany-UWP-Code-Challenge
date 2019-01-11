@@ -30,9 +30,9 @@ namespace Sherpany_UWP_Code_Challenge.ViewModel.Pages
         }
 
         //TODO If a passcode has already been stored, use this to validate and navigate
-        public ICommand ValidatePasswordAndNavigateOrShowErrorCommand => new RelayCommand<string>(ValidatePasswordAndNavigateOrShowError);
+        public ICommand ValidatePasswordAndNavigateCommand => new RelayCommand<string>(ValidatePasswordAndNavigate);
 
-        private void ValidatePasswordAndNavigateOrShowError(string password)
+        private void ValidatePasswordAndNavigate(string password)
         {
             throw new NotImplementedException();
         }

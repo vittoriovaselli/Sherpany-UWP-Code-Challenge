@@ -120,8 +120,16 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Common\LightInjectServiceLocation.cs" />
+    <Compile Include="Interfaces\EncryptionManager.cs" />
     <Compile Include="Interfaces\IDialogServiceEx.cs" />
-    <Compile Include="MainPage.xaml.cs">
+    <Compile Include="Interfaces\IDummyApiService.cs" />
+    <Compile Include="Interfaces\IKeyManager.cs" />
+    <Compile Include="Model\SherpanyValueModel.cs" />
+    <Compile Include="Services\DummyApiService.cs" />
+    <Compile Include="Services\KeyManager.cs" />
+    <Compile Include="Services\UwpEncryptionManager.cs" />
+    <Compile Include="ViewModel\Pages\SherpanyValuesPageViewModel.cs" />
+    <Compile Include="View\Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Messages\CloseAppMessage.cs" />
@@ -134,6 +142,9 @@
     <Compile Include="View\Controls\AutoAligningDialog.cs" />
     <Compile Include="View\Dialog\ConfirmActionDialog.xaml.cs">
       <DependentUpon>ConfirmActionDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\SherpanyValuesPageView.xaml.cs">
+      <DependentUpon>SherpanyValuesPageView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -157,11 +168,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainPage.xaml">
+    <Page Include="View\Pages\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Dialog\ConfirmActionDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\SherpanyValuesPageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -191,7 +206,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Converter\" />
-    <Folder Include="NewFolder2\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
