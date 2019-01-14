@@ -1,6 +1,6 @@
 # Sherpany UWP Code Challenge
 Preface
-This App is absolutely useless! At least that’s what we want you to think. Sherpany handles very sensitive information, thus security is key. This App will enable to securely download and store our values.
+This App is absolutely useless! At least that’s what we want you to think. Sherpany handles very sensitive information, thus security is key. This App will enable you to securely download and store our values.
 
 1. Refactoring
 
