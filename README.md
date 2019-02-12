@@ -2,6 +2,10 @@
 Preface
 This App is absolutely useless! At least that’s what we want you to think. Sherpany handles very sensitive information, thus security is key. This App will enable you to securely download and store our values.
 
+Communication:
+Please keep us informed about your progress, for example when you start or end your challenge. Just to help us understand how you work. If you find another way of letting us know your work-style, please do so.
+
+
 1. Refactoring
 
 The empty MainPageViewModel is already set as DataContext of the MainPage. Move and refactor all code according to the MVVM pattern. Please make sure all following tasks stick to the pattern too.
