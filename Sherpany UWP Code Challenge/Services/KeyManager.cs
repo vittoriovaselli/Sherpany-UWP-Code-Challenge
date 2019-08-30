@@ -46,7 +46,7 @@ namespace Sherpany_UWP_Code_Challange.Services
             return _localSettings.Values.ContainsKey(_pinKey);            
         }
 
-        private string Hash(string message)
+        public string Hash(string message)
         {
             IBuffer buffer = CryptographicBuffer.ConvertStringToBinary(message, BinaryStringEncoding.Utf8);
 

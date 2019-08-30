@@ -9,6 +9,7 @@ using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 using GalaSoft.MvvmLight.Views;
 using Sherpany_UWP_Code_Challange.Services;
+using Sherpany_UWP_Code_Challenge.Interfaces;
 using Sherpany_UWP_Code_Challenge.Messages;
 
 
@@ -29,15 +30,40 @@ namespace Sherpany_UWP_Code_Challenge.ViewModel.Pages
             set
             {
                 Set(ref _password, value);
-                ((RelayCommand)SetPasswordAndNavigateCommand).RaiseCanExecuteChanged();
+                ((RelayCommand)SelectedCommand).RaiseCanExecuteChanged();
+                
             }
         }
 
+        public string TextBoxMessage { get; set; } = "Set a six-digit passcode:";
+
+        public ICommand SelectedCommand { get; set; }
+
         private readonly INavigationService _navigationService;
 
-        public MainPageViewModel(INavigationService navigationService)
+        private readonly IDialogServiceEx _dialogService;
+
+        public MainPageViewModel(INavigationService navigationService, IDialogServiceEx dialogService)
         {
             _navigationService = navigationService;
+            _dialogService = dialogService;
+
+            CheckIfPinIsSet();
+        }
+
+        private void CheckIfPinIsSet()
+        {
+            var keyManager = new KeyManager();
+            if (keyManager.IsKeySet())
+            {
+                TextBoxMessage = "Please confirm your pin:";
+                RaisePropertyChanged(String.Empty);
+                SelectedCommand = ValidatePasswordAndNavigateCommand;
+            }
+            else
+            {
+                SelectedCommand = SetPasswordAndNavigateCommand;
+            }
         }
 
         public ICommand ButtonTappedCommand => new RelayCommand(ButtonTapped);
@@ -80,11 +106,35 @@ namespace Sherpany_UWP_Code_Challenge.ViewModel.Pages
         }
 
         //TODO If a passcode has already been stored, use this to validate and navigate
-        public ICommand ValidatePasswordAndNavigateCommand => new RelayCommand<string>(ValidatePasswordAndNavigate);
-
-        private void ValidatePasswordAndNavigate(string password)
+        private ICommand _validatePasswordAndNavigateCommand;
+        public ICommand ValidatePasswordAndNavigateCommand
         {
-            throw new NotImplementedException();
+            get
+            {
+                if (_validatePasswordAndNavigateCommand == null)
+                {
+                    _validatePasswordAndNavigateCommand = new RelayCommand(ValidatePasswordAndNavigate,IsPasswordValid);
+                }
+
+                return _validatePasswordAndNavigateCommand;
+            }
+        }
+
+        private void ValidatePasswordAndNavigate()
+        {
+            var keyManager = new KeyManager();
+
+           
+            
+            if(keyManager.Hash(_password) == keyManager.GetEncryptionKey(true))
+            {
+                _navigationService.NavigateTo("SherpanyValuesPageView");
+            }
+            else
+            {
+                _dialogService.ShowError("Invalid PIN", "Pin is incorrect", "ok", null);
+            }
+
         }
     }
 }
