@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using GalaSoft.MvvmLight.Messaging;
 using Sherpany_UWP_Code_Challenge.Messages;
+using System.Diagnostics;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -30,6 +31,22 @@ namespace Sherpany_UWP_Code_Challenge
             this.InitializeComponent();
 
             Messenger.Default.Register<BeginCloseAnimationMessage>(this, m => CloseAppAnimation.Begin());
+        }
+
+        private void OnDragableGridManipulationDelta(object sender, ManipulationDeltaRoutedEventArgs e)
+        {
+            this.DragableGridTransform.TranslateX += e.Delta.Translation.X;
+            this.DragableGridTransform.TranslateY += e.Delta.Translation.Y;
+        }
+
+        private void OnDragableGridManipulationStarted(object sender, ManipulationStartedRoutedEventArgs e)
+        {
+            Button.IsEnabled = false;
+        }
+
+        private void OnDragableGridManipulationCompleted(object sender, ManipulationCompletedRoutedEventArgs e)
+        {
+            Button.IsEnabled = true;
         }
     }
 }
