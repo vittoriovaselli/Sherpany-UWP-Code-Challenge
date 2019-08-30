@@ -29,13 +29,7 @@ namespace Sherpany_UWP_Code_Challenge
         {
             this.InitializeComponent();
 
-        }
-
-        private async void ButtonTapped(object sender, TappedRoutedEventArgs e)
-        {
-            CloseAppAnimation.Begin();
-            await Task.Delay(2000);
-            Messenger.Default.Send(new CloseAppMessage());
+            Messenger.Default.Register<BeginCloseAnimationMessage>(this, m => CloseAppAnimation.Begin());
         }
     }
 }
