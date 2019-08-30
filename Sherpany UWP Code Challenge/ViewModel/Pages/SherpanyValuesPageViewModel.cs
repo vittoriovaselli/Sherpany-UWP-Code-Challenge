@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using Sherpany_UWP_Code_Challange.Interfaces;
 
-namespace Sherpany_UWP_Code_Challange.ViewModel.Pages
+namespace Sherpany_UWP_Code_Challenge.ViewModel.Pages
 {
     public class SherpanyValuesPageViewModel: ViewModelBase
     {

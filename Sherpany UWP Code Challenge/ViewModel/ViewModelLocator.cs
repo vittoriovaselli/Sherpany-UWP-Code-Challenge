@@ -40,7 +40,7 @@ namespace Sherpany_UWP_Code_Challenge.ViewModel
 
         //the new pages
         public MainPageViewModel MainPage => ServiceLocator.Current.GetInstance<MainPageViewModel>();
-        public SherpanyValuesPageView ValuesPage => ServiceLocator.Current.GetInstance<SherpanyValuesPageView>();
+        public SherpanyValuesPageViewModel ValuesPage => ServiceLocator.Current.GetInstance<SherpanyValuesPageViewModel>();
 
 
         private void RegisterServices()
@@ -53,7 +53,7 @@ namespace Sherpany_UWP_Code_Challenge.ViewModel
 
             // Registration of the pages
             _container.Register<MainPageViewModel>();
-            _container.Register<SherpanyValuesPageView>();
+            _container.Register<SherpanyValuesPageViewModel>();
 
             
 
@@ -70,6 +70,8 @@ namespace Sherpany_UWP_Code_Challenge.ViewModel
 
             // New pages
             navigationService.Configure("MainPageView", typeof(MainPageView));
+
+            navigationService.Configure("SherpanyValuesPageView", typeof(SherpanyValuesPageView));
 
             return navigationService;
         }
