@@ -26,9 +26,9 @@ namespace Sherpany_UWP_Code_Challenge.ViewModel.Pages
 
         private async void ButtonTapped()
         {
-                Messenger.Default.Send(new BeginCloseAnimationMessage());
-                await Task.Delay(2000);
-                Messenger.Default.Send(new CloseAppMessage());
+            Messenger.Default.Send(new BeginCloseAnimationMessage());
+            await Task.Delay(2000);
+            Messenger.Default.Send(new CloseAppMessage());
         }
         
         //TODO If no passcode is set in the vault, the user can enter one and will then be navigated to the DetailPageView
