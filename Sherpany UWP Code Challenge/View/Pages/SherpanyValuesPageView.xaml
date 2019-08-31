@@ -8,6 +8,15 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     DataContext="{Binding ValuesPage, Source={StaticResource Locator}}">
+    <Page.Resources>
+        <Storyboard x:Name="DetailPanelAnimation">
+            <DoubleAnimation
+                EnableDependentAnimation="True"
+                Storyboard.TargetName="DetailPanel"
+                Storyboard.TargetProperty="Width"
+                From="0" To="500" Duration="0:0:0.5"/>
+        </Storyboard>
+    </Page.Resources>
 
     <Grid>
         <Grid.Resources>
@@ -46,7 +55,7 @@
             </ListView.ItemContainerStyle>
         </ListView>
         
-        <Grid Grid.Column="2" Name="DetailPanel" Background="LightGray" Width="500" VerticalAlignment="Stretch" Visibility="Collapsed">
+        <Grid Grid.Column="2" Name="DetailPanel" Background="LightGray" Width="0" VerticalAlignment="Stretch" Visibility="Visible">
             <StackPanel Margin="40" VerticalAlignment="Center">
                 <TextBlock Text="{Binding SelectedTitle}" FontSize="40" FontWeight="ExtraBold"/>
                 <TextBlock Text="{Binding SelectedDescription}" FontSize="32" FontWeight="SemiBold" />

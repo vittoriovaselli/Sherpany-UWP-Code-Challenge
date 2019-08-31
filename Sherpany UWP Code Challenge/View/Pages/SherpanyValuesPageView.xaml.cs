@@ -31,8 +31,16 @@ namespace Sherpany_UWP_Code_Challange.View.Pages
         {
             var selected = e.AddedItems.FirstOrDefault();
 
-            DetailPanel.Visibility = selected != null ? Visibility.Visible: Visibility.Collapsed;
-            
+            if(selected == null)
+            {
+                DetailPanel.Width = 0;
+                return;
+            }
+
+            if(DetailPanel.Width == 0)
+            {
+                DetailPanelAnimation.Begin();
+            }
         }
     }
 }
