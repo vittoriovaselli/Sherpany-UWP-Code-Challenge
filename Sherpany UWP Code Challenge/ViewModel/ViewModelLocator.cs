@@ -61,6 +61,7 @@ namespace Sherpany_UWP_Code_Challenge.ViewModel
             _container.Register<IDummyApiService, DummyApiService>();
             _container.Register<IKeyManager, KeyManager>();
             _container.Register<IEncryptionManager, UwpEncryptionManager>();
+            _container.Register<IValuesCacheService, ValuesCacheService>();
 
         }
 

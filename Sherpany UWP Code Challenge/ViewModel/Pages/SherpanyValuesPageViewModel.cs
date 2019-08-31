@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +19,8 @@ namespace Sherpany_UWP_Code_Challenge.ViewModel.Pages
     public class SherpanyValuesPageViewModel: ViewModelBase
     {
         private readonly IDummyApiService _apiService;
+
+        private readonly IValuesCacheService _valuesCacheService;
 
         private bool _isBusy = false;
 
@@ -92,9 +96,28 @@ namespace Sherpany_UWP_Code_Challenge.ViewModel.Pages
             }
         }
 
-        public SherpanyValuesPageViewModel(IDummyApiService apiService)
+        public SherpanyValuesPageViewModel(IDummyApiService apiService, IValuesCacheService valuesCacheService)
         {
             _apiService = apiService;
+            _valuesCacheService = valuesCacheService;
+
+        }
+
+        private void ContentCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if(e.Action == NotifyCollectionChangedAction.Add)
+            {
+                int order = ((SherpanyValueModel)e.NewItems[0]).Order;
+                int newPosition = e.NewStartingIndex;
+                int from = Math.Min(order, newPosition);
+                int to = Math.Max(order, newPosition);
+                while (from <= to)
+                {
+                    Values[from].Order = from;
+                    from++;
+                }
+                _valuesCacheService.SetData(Values);
+            }
         }
 
         private ICommand _getValuesCommand;
@@ -115,21 +138,22 @@ namespace Sherpany_UWP_Code_Challenge.ViewModel.Pages
         private async void GetValues()
         {
             IsBusy = true;
-
-            var valuesCacheService = new ValuesCacheService();
             
-            if (await valuesCacheService.IsListSaved())
+            if (await _valuesCacheService.IsListStored())
             {
                 //get the cached list
-                Values = (await valuesCacheService.GetData()).ToObservableCollection();
+                Values = (await _valuesCacheService.GetData()).ToObservableCollection();
             }
             else
             {
                 //get the list from apis
                 Values = (await _apiService.GetValueModelsAsync()).OrderBy(e => e.Order).ToObservableCollection();
                 //save data in cache
-                valuesCacheService.SetData(Values);
+                _valuesCacheService.SetData(Values);
             }
+
+            Values.CollectionChanged += ContentCollectionChanged;
+
 
             IsBusy = false;
         }

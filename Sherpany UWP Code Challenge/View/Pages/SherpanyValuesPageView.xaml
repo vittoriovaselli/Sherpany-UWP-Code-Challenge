@@ -26,8 +26,9 @@
             <Button Content="Sync" Command="{Binding GetValuesCommand}" HorizontalAlignment="Stretch" Margin="20" Style="{StaticResource AccentButtonStyle}"/>
         </Grid>
 
-        <ListView Name="ListView" ItemsSource="{Binding Values}" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" 
-                  SelectionChanged="OnSelectionChanged" SelectionMode="Single" SelectedIndex="{Binding SelectedValueIndex, Mode=TwoWay}">
+        <ListView Name="ListView" ItemsSource="{Binding Values, Mode=TwoWay}" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" 
+                  SelectionChanged="OnSelectionChanged" SelectionMode="Single" SelectedIndex="{Binding SelectedValueIndex, Mode=TwoWay}"
+                  CanDragItems="True" CanReorderItems="True" AllowDrop="True">
             <ListView.ItemContainerTransitions>
                 <TransitionCollection>
                     <EntranceThemeTransition IsStaggeringEnabled="True"/>

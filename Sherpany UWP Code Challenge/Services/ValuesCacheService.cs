@@ -1,4 +1,5 @@
-﻿using Sherpany_UWP_Code_Challange.Model;
+﻿using Sherpany_UWP_Code_Challange.Interfaces;
+using Sherpany_UWP_Code_Challange.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,9 +10,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
 
+
 namespace Sherpany_UWP_Code_Challange.Services
 {
-    class ValuesCacheService
+    class ValuesCacheService: IValuesCacheService
     {
         private readonly string fileName = "values_cache_file";
 
@@ -56,7 +58,7 @@ namespace Sherpany_UWP_Code_Challange.Services
             await WriteBytesToFile(encryptedData, file);       
         }
 
-        public async Task<bool> IsListSaved()
+        public async Task<bool> IsListStored()
         {
             var file = await _localFolder.TryGetItemAsync(fileName);
 
