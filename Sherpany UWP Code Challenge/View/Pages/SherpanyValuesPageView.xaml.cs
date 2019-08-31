@@ -26,5 +26,13 @@ namespace Sherpany_UWP_Code_Challange.View.Pages
         {
             this.InitializeComponent();
         }
+
+        private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selected = e.AddedItems.FirstOrDefault();
+
+            DetailPanel.Visibility = selected != null ? Visibility.Visible: Visibility.Collapsed;
+            
+        }
     }
 }

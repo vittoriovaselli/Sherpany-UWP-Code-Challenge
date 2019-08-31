@@ -17,6 +17,9 @@ using Windows.UI.Xaml.Navigation;
 using GalaSoft.MvvmLight.Messaging;
 using Sherpany_UWP_Code_Challenge.Messages;
 using Sherpany_UWP_Code_Challenge.ViewModel;
+using Windows.ApplicationModel.Core;
+using Windows.UI;
+using Windows.UI.ViewManagement;
 
 namespace Sherpany_UWP_Code_Challenge
 {
@@ -74,6 +77,11 @@ namespace Sherpany_UWP_Code_Challenge
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();
+
+                CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
+                ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
+                titleBar.ButtonBackgroundColor = Colors.Transparent;
+                titleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
             }
         }
 
