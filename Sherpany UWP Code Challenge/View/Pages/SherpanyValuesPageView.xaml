@@ -28,6 +28,11 @@
 
         <ListView Name="ListView" ItemsSource="{Binding Values}" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" 
                   SelectionChanged="OnSelectionChanged" SelectionMode="Single" SelectedIndex="{Binding SelectedValueIndex, Mode=TwoWay}">
+            <ListView.ItemContainerTransitions>
+                <TransitionCollection>
+                    <EntranceThemeTransition IsStaggeringEnabled="True"/>
+                </TransitionCollection>
+            </ListView.ItemContainerTransitions>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Title}"/>

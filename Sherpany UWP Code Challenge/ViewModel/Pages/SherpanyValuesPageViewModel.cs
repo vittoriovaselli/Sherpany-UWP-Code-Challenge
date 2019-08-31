@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using Sherpany_UWP_Code_Challange.Common;
 using Sherpany_UWP_Code_Challange.Interfaces;
 using Sherpany_UWP_Code_Challange.Model;
+using Sherpany_UWP_Code_Challange.Services;
 
 namespace Sherpany_UWP_Code_Challenge.ViewModel.Pages
 {
@@ -114,9 +116,23 @@ namespace Sherpany_UWP_Code_Challenge.ViewModel.Pages
         {
             IsBusy = true;
 
-            Values = new ObservableCollection<SherpanyValueModel>((await _apiService.GetValueModelsAsync()).OrderBy(e => e.Order));
+            var valuesCacheService = new ValuesCacheService();
+            
+            if (await valuesCacheService.IsListSaved())
+            {
+                //get the cached list
+                Values = (await valuesCacheService.GetData()).ToObservableCollection();
+            }
+            else
+            {
+                //get the list from apis
+                Values = (await _apiService.GetValueModelsAsync()).OrderBy(e => e.Order).ToObservableCollection();
+                //save data in cache
+                valuesCacheService.SetData(Values);
+            }
 
             IsBusy = false;
         }
+
     }
 }

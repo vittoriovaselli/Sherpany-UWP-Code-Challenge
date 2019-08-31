@@ -120,6 +120,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Common\LightInjectServiceLocation.cs" />
+    <Compile Include="Common\ObservableCollectionExtension.cs" />
     <Compile Include="Interfaces\EncryptionManager.cs" />
     <Compile Include="Interfaces\IDialogServiceEx.cs" />
     <Compile Include="Interfaces\IDummyApiService.cs" />
@@ -128,6 +129,7 @@
     <Compile Include="Model\SherpanyValueModel.cs" />
     <Compile Include="Services\DummyApiService.cs" />
     <Compile Include="Services\KeyManager.cs" />
+    <Compile Include="Services\ValuesCacheService.cs" />
     <Compile Include="Services\UwpEncryptionManager.cs" />
     <Compile Include="ViewModel\Pages\SherpanyValuesPageViewModel.cs" />
     <Compile Include="View\Pages\MainPage.xaml.cs">
