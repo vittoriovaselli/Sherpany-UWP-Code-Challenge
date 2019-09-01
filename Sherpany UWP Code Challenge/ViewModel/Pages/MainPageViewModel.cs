@@ -35,6 +35,8 @@ namespace Sherpany_UWP_Code_Challenge.ViewModel.Pages
             }
         }
 
+        public string ErrorMessage { get; set; }
+
         public string TextBoxMessage { get; set; } = "Set a six-digit passcode:";
 
         public ICommand SelectedCommand { get; set; }
@@ -110,7 +112,20 @@ namespace Sherpany_UWP_Code_Challenge.ViewModel.Pages
 
         private bool IsPasswordValid()
         {
-            return String.IsNullOrEmpty(_password) ? false : (_password.All(c => Char.IsDigit(c)) && _password.Length == _pinLenght);
+            bool containsChar = String.IsNullOrEmpty(_password) ? false : !_password.All(c => Char.IsDigit(c));
+
+            if (containsChar)
+            {
+                ErrorMessage = "Pin must contain digits only";
+            }
+            else
+            {
+                ErrorMessage = String.Empty;
+            }
+           
+            RaisePropertyChanged(String.Empty);
+
+            return String.IsNullOrEmpty(_password) ? false : (!containsChar && _password.Length == _pinLenght);
         }
 
         //TODO If a passcode has already been stored, use this to validate and navigate

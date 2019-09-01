@@ -21,7 +21,8 @@
             <TextBlock VerticalAlignment="Top" Text="{Binding TextBoxMessage}"></TextBlock>
             <TextBox MaxLength="6" VerticalAlignment="Top" PlaceholderText="123456" Height="30" Margin="0,30,0,0" Text="{Binding Password, Mode=TwoWay, 
                 UpdateSourceTrigger=PropertyChanged}"></TextBox>
-            <Button Content="Navigate" VerticalAlignment="Top" Margin="0,70,0,0" HorizontalAlignment="Right" Command="{Binding SelectedCommand}"></Button>
+            <TextBlock Text="{Binding ErrorMessage}" Margin="0,60,0,0" Foreground="Red" FontSize="12" />
+            <Button Content="Navigate" VerticalAlignment="Top" Margin="0,100,0,0" HorizontalAlignment="Right" Command="{Binding SelectedCommand}"></Button>
         </Grid>
         <Grid x:Name="DragableGrid" VerticalAlignment="Center" HorizontalAlignment="Center" Background="White" 
                 ManipulationDelta="OnDragableGridManipulationDelta" ManipulationMode="TranslateX, TranslateY, Scale"
