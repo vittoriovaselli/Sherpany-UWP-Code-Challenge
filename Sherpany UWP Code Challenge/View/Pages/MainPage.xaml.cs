@@ -31,6 +31,16 @@ namespace Sherpany_UWP_Code_Challenge
             this.InitializeComponent();
 
             Messenger.Default.Register<BeginCloseAnimationMessage>(this, m => CloseAppAnimation.Begin());
+
+            KeyUp += MainPageViewKeyUp;
+        }
+
+        private void MainPageViewKeyUp(object sender, KeyRoutedEventArgs e)
+        {
+            if(e.Key == Windows.System.VirtualKey.Enter)
+            {
+                Messenger.Default.Send(new EnterPressedMessage());
+            }
         }
 
         private void OnDragableGridManipulationDelta(object sender, ManipulationDeltaRoutedEventArgs e)

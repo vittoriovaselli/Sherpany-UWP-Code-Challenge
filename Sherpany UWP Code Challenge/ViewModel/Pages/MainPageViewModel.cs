@@ -49,6 +49,14 @@ namespace Sherpany_UWP_Code_Challenge.ViewModel.Pages
             _dialogService = dialogService;
 
             CheckIfPinIsSet();
+
+            Messenger.Default.Register<EnterPressedMessage>(this, m =>
+            {
+                if (SelectedCommand.CanExecute(null))
+                {
+                    SelectedCommand.Execute(null);
+                }
+            });
         }
 
         private void CheckIfPinIsSet()

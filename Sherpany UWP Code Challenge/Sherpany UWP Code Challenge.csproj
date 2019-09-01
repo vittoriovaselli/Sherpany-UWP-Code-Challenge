@@ -127,6 +127,7 @@
     <Compile Include="Interfaces\IKeyManager.cs" />
     <Compile Include="Interfaces\IValuesCacheService.cs" />
     <Compile Include="Messages\BeginCloseAnimationMessage.cs" />
+    <Compile Include="Messages\EnterPressedMessage.cs" />
     <Compile Include="Model\SherpanyValueModel.cs" />
     <Compile Include="Services\DummyApiService.cs" />
     <Compile Include="Services\KeyManager.cs" />
