@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sherpany UWP Code Challenge", "Sherpany UWP Code Challenge\Sherpany UWP Code Challenge.csproj", "{0F3B0A64-8ED6-4B08-9528-2AF3F065579C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sherpany UWP Code Challenge Unit Tests", "Sherpany UWP Code Challenge Unit Tests\Sherpany UWP Code Challenge Unit Tests.csproj", "{B69DA032-8C59-45D6-9CE2-D91BF2A13F3E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -41,6 +43,26 @@ Global
 		{0F3B0A64-8ED6-4B08-9528-2AF3F065579C}.Release|x86.ActiveCfg = Release|x86
 		{0F3B0A64-8ED6-4B08-9528-2AF3F065579C}.Release|x86.Build.0 = Release|x86
 		{0F3B0A64-8ED6-4B08-9528-2AF3F065579C}.Release|x86.Deploy.0 = Release|x86
+		{B69DA032-8C59-45D6-9CE2-D91BF2A13F3E}.Debug|ARM.ActiveCfg = Debug|ARM
+		{B69DA032-8C59-45D6-9CE2-D91BF2A13F3E}.Debug|ARM.Build.0 = Debug|ARM
+		{B69DA032-8C59-45D6-9CE2-D91BF2A13F3E}.Debug|ARM.Deploy.0 = Debug|ARM
+		{B69DA032-8C59-45D6-9CE2-D91BF2A13F3E}.Debug|ARM64.ActiveCfg = Debug|x86
+		{B69DA032-8C59-45D6-9CE2-D91BF2A13F3E}.Debug|x64.ActiveCfg = Debug|x64
+		{B69DA032-8C59-45D6-9CE2-D91BF2A13F3E}.Debug|x64.Build.0 = Debug|x64
+		{B69DA032-8C59-45D6-9CE2-D91BF2A13F3E}.Debug|x64.Deploy.0 = Debug|x64
+		{B69DA032-8C59-45D6-9CE2-D91BF2A13F3E}.Debug|x86.ActiveCfg = Debug|x86
+		{B69DA032-8C59-45D6-9CE2-D91BF2A13F3E}.Debug|x86.Build.0 = Debug|x86
+		{B69DA032-8C59-45D6-9CE2-D91BF2A13F3E}.Debug|x86.Deploy.0 = Debug|x86
+		{B69DA032-8C59-45D6-9CE2-D91BF2A13F3E}.Release|ARM.ActiveCfg = Release|ARM
+		{B69DA032-8C59-45D6-9CE2-D91BF2A13F3E}.Release|ARM.Build.0 = Release|ARM
+		{B69DA032-8C59-45D6-9CE2-D91BF2A13F3E}.Release|ARM.Deploy.0 = Release|ARM
+		{B69DA032-8C59-45D6-9CE2-D91BF2A13F3E}.Release|ARM64.ActiveCfg = Release|x86
+		{B69DA032-8C59-45D6-9CE2-D91BF2A13F3E}.Release|x64.ActiveCfg = Release|x64
+		{B69DA032-8C59-45D6-9CE2-D91BF2A13F3E}.Release|x64.Build.0 = Release|x64
+		{B69DA032-8C59-45D6-9CE2-D91BF2A13F3E}.Release|x64.Deploy.0 = Release|x64
+		{B69DA032-8C59-45D6-9CE2-D91BF2A13F3E}.Release|x86.ActiveCfg = Release|x86
+		{B69DA032-8C59-45D6-9CE2-D91BF2A13F3E}.Release|x86.Build.0 = Release|x86
+		{B69DA032-8C59-45D6-9CE2-D91BF2A13F3E}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

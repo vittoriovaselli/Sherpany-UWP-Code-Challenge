@@ -16,9 +16,11 @@ using Sherpany_UWP_Code_Challenge.Interfaces;
 using Sherpany_UWP_Code_Challenge.Services;
 using Sherpany_UWP_Code_Challenge.View.Dialog;
 using Sherpany_UWP_Code_Challenge.ViewModel.Pages;
+using Windows.UI.Xaml.Data;
 
 namespace Sherpany_UWP_Code_Challenge.ViewModel
 {
+    [Bindable]
     public class ViewModelLocator
     {
         private readonly ServiceContainer _container;
